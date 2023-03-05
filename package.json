@@ -1,5 +1,6 @@
 {
   "name": "rollup-plugin-chunk-per-export",
+  "version": "1.0.0",
   "type": "module",
   "description": "Rollup plugin that ensures different exports are in different files for optimal tree-shaking",
   "repository": {
