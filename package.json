@@ -1,7 +1,17 @@
 {
   "name": "rollup-plugin-chunk-per-export",
   "type": "module",
-  "private": true,
+  "description": "Rollup plugin that ensures different exports are in different files for optimal tree-shaking",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cprecioso/rollup-plugin-chunk-per-export.git"
+  },
+  "homepage": "https://github.com/cprecioso/rollup-plugin-chunk-per-export#readme",
+  "bugs": {
+    "url": "https://github.com/cprecioso/rollup-plugin-chunk-per-export/issues"
+  },
+  "author": "Carlos Precioso",
+  "license": "ISC",
   "packageManager": "yarn@3.4.1",
   "engines": {
     "node": ">=18"
@@ -11,6 +21,9 @@
   "files": [
     "dist",
     "index.d.ts"
+  ],
+  "keywords": [
+    "rollup-plugin"
   ],
   "scripts": {
     "build": "esbuild --outdir=dist --bundle --platform=node --target=node18 --packages=external --format=esm src/index.ts"
