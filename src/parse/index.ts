@@ -11,12 +11,7 @@ export const parseExports = function* (
   ctx: PluginContext,
   mod: ModuleInfo
 ): Generator<ParsedExportInfo> {
-  assert(
-    mod.code,
-    `Module ${mod.id} doesn't have associated code (${[
-      ...ctx.getModuleIds(),
-    ].join(",\n")})`
-  );
+  assert(mod.code != null, `Module ${mod.id} doesn't have associated code`);
   const node = ctx.parse(mod.code);
   assertProgram(node);
 
