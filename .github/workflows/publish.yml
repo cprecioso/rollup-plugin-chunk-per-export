@@ -24,6 +24,8 @@ jobs:
           node-version-file: .node-version
           cache: yarn
 
+      - run: yarn install --immutable
+
       - run: yarn pack -o package.tgz
 
       - uses: actions/upload-artifact@v3

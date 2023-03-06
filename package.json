@@ -27,7 +27,8 @@
     "rollup-plugin"
   ],
   "scripts": {
-    "build": "esbuild --outdir=dist --bundle --platform=node --target=node18 --packages=external --format=esm src/index.ts"
+    "build": "esbuild --outdir=dist --bundle --platform=node --target=node18 --packages=external --format=esm src/index.ts",
+    "prepack": "yarn run build"
   },
   "peerDependencies": {
     "rollup": "^3.17.3"
