@@ -37,6 +37,10 @@ jobs:
   publish-npm:
     needs: [build]
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - uses: actions/setup-node@v3
@@ -48,6 +52,7 @@ jobs:
         with:
           name: package.tgz
 
-      - run: npm publish package.tgz
+      - run: npm install -g npm
+      - run: npm publish --provenance --access public package.tgz
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
